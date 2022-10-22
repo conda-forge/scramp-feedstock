@@ -1,5 +1,5 @@
 {% set name = "scramp" %}
-{% set version = "1.4.1" %}
+{% set version = "1.4.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: f964801077be9be2a1416ffe255d2d78834b3d9d5c8ce5d28f76a856f209f70e
+  sha256: ffdbc7823f3c5cb6b95895f3e3ede3506590f35db636e79fa56a8a67a7d2e855
 
 build:
   number: 0

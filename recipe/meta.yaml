@@ -16,11 +16,12 @@ build:
 
 requirements:
   host:
-    - python >3.5
+    - python >=3.7
     - pip
   run:
-    - python >3.5
-    - asn1crypto >=1.4.0
+    - python >=3.7
+    - asn1crypto >=1.5.1
+    - importlib-metadata >=1.0
 
 test:
   imports:

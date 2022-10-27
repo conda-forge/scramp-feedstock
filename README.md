@@ -5,7 +5,7 @@ Home: https://github.com/tlocke/scramp
 
 Package license: MIT
 
-Feedstock license: [MIT No Attribution](https://github.com/conda-forge/scramp-feedstock/blob/main/LICENSE.txt)
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/scramp-feedstock/blob/main/LICENSE.txt)
 
 Summary: A pure-Python implementation of the SCRAM authentication protocol
 

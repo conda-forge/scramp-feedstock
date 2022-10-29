@@ -10,7 +10,7 @@ source:
   sha256: d6885e002707d12a1bcb1f6b243217f06253397afc4e9d970e1a4c009635d6cc
 
 build:
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . -vv
   noarch: python
 
@@ -18,6 +18,8 @@ requirements:
   host:
     - python >=3.7
     - pip
+    - setuptools >=42
+    - versioningit >=1.1.1
   run:
     - python >=3.7
     - asn1crypto >=1.5.1
@@ -26,6 +28,11 @@ requirements:
 test:
   imports:
     - scramp
+  commands:
+    - pip check
+    - python -c 'import scramp; print(scramp.__version__)'
+  requires:
+    - pip
 
 about:
   home: https://github.com/tlocke/scramp

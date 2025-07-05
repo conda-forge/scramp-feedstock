@@ -1,5 +1,5 @@
 {% set name = "scramp" %}
-{% set version = "1.4.4" %}
+{% set version = "1.4.6" %}
 
 package:
   name: {{ name|lower }}
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: b7022a140040f33cf863ab2657917ed05287a807b917950489b89b9f685d59bc
+  sha256: fe055ebbebf4397b9cb323fcc4b299f219cd1b03fd673ca40c97db04ac7d107e
 
 build:
-  number: 1
+  number: 0
   script: {{ PYTHON }} -m pip install . -vv
   noarch: python
 
@@ -18,12 +18,11 @@ requirements:
   host:
     - python {{ python_min }}
     - pip
-    - setuptools >=42
-    - versioningit >=1.1.1
+    - hatchling
+    - versioningit
   run:
     - python >={{ python_min }}
     - asn1crypto >=1.5.1
-    - importlib-metadata >=1.0
 
 test:
   imports:
@@ -50,3 +49,5 @@ extra:
     - nicolas-geniteau
     - maximerihouey
     - ncolomer
+    - xylar
+

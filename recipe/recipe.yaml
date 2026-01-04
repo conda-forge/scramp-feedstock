@@ -1,43 +1,42 @@
-{% set name = "scramp" %}
-{% set version = "1.4.7" %}
+context:
+  name: scramp
+  version: 1.4.7
 
 package:
-  name: {{ name|lower }}
-  version: {{ version }}
+  name: ${{ name|lower }}
+  version: ${{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name }}-${{ version }}.tar.gz
   sha256: 59b59e27aad389359d5d5cce72974d43c3db4c1cecbb0c2f98d581b76ef1fb77
 
 build:
   number: 0
-  script: {{ PYTHON }} -m pip install . -vv
   noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
-    - python {{ python_min }}
+    - python ${{ python_min }}.*
     - pip
     - hatchling
     - versioningit
   run:
-    - python >={{ python_min }}
+    - python >=${{ python_min }},<4.0
     - asn1crypto >=1.5.1
 
-test:
-  imports:
-    - scramp
-  commands:
-    - pip check
-    - python -c 'import scramp; print(scramp.__version__)'
-  requires:
-    - pip
-    - python {{ python_min }}
+tests:
+  - python:
+      imports:
+        - scramp
+      pip_check: true
+      python_version: ${{ python_min }}.*
+  - script:
+      - python -c "import scramp; print(scramp.__version__)"
 
 about:
-  home: https://github.com/tlocke/scramp
+  homepage: https://github.com/tlocke/scramp
   license: MIT
-  license_family: MIT
   license_file: LICENSE
   summary: A pure-Python implementation of the SCRAM authentication protocol
   description: |

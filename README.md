@@ -12,7 +12,6 @@ Summary: A pure-Python implementation of the SCRAM authentication protocol
 A Python implementation of the SCRAM authentication protocol defined by
 RFC 5802 and RFC 7677.
 
-
 Current build status
 ====================
 

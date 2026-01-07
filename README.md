@@ -3,7 +3,7 @@ About scramp-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/scramp-feedstock/blob/main/LICENSE.txt)
 
-Home: https://github.com/tlocke/scramp
+Home: https://codeberg.org/tlocke/scramp
 
 Package license: MIT
 

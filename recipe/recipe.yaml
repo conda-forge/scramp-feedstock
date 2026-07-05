@@ -1,6 +1,6 @@
 context:
   name: scramp
-  version: "1.4.11"
+  version: "1.4.12"
 
 package:
   name: ${{ name|lower }}
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name }}-${{ version }}.tar.gz
-  sha256: 45ae7196ca3ee45dfd4e0a8732529ad1e601c7d12364e1412faeee36258bb9c9
+  sha256: 94b38decf26005b835050d06541a5aefb9914497f4de789c6d82a0abc4b934de
 
 build:
   number: 0

@@ -1,6 +1,6 @@
 context:
   name: scramp
-  version: "1.4.17"
+  version: "1.4.18"
 
 package:
   name: ${{ name|lower }}
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name }}-${{ version }}.tar.gz
-  sha256: 28970f29ebc33df47f9975c805e5e5a360effe5b31045e607d64b3b60370dba1
+  sha256: 44a62e7d202efdf11d9bcdc9c2bc973221d3ad9a69a5f99245864d61ce971fc2
 
 build:
   number: 0
@@ -19,8 +19,8 @@ requirements:
   host:
     - python ${{ python_min }}.*
     - pip
-    - hatchling
-    - versioningit
+    - hatchling >=1.32.4
+    - versioningit >=3.3.0
   run:
     - python >=${{ python_min }},<4.0
     - asn1crypto >=1.5.1
@@ -30,7 +30,9 @@ tests:
       imports:
         - scramp
       pip_check: true
-      python_version: ${{ python_min }}.*
+      python_version:
+        - ${{ python_min }}.*
+        - "*"
   - script:
       - python -c "import scramp; print(scramp.__version__)"
 

@@ -19,8 +19,8 @@ requirements:
   host:
     - python ${{ python_min }}.*
     - pip
-    - hatchling
-    - versioningit
+    - hatchling >=1.32.4
+    - versioningit >=3.3.0
   run:
     - python >=${{ python_min }},<4.0
     - asn1crypto >=1.5.1
@@ -30,7 +30,9 @@ tests:
       imports:
         - scramp
       pip_check: true
-      python_version: ${{ python_min }}.*
+      python_version:
+        - ${{ python_min }}.*
+        - "*"
   - script:
       - python -c "import scramp; print(scramp.__version__)"
 
